@@ -1,0 +1,17 @@
+{% extends 'movies/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="movie-detail">
+    <h1>{{ movie.title }}</h1>
+    <p><strong>Opis:</strong> {{ movie.description }}</p>
+    <p><strong>Rok produkcji:</strong> {{ movie.year }}</p>
+    <p><strong>Gatunek:</strong> {{ movie.genre }}</p>
+
+    <div class="buttons">
+        <a href="{% url 'mini_filmweb:movie_edit' movie.id %}" class="button">Edytuj</a>
+        <a href="{% url 'mini_filmweb:movie_delete' movie.id %}" class="button delete">Usuń</a>
+        <a href="{% url 'mini_filmweb:movie_list' %}" class="button">Powrót do listy</a>
+    </div>
+</div>
+{% endblock %}
