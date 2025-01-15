@@ -1,0 +1,29 @@
+{% load static %}  <!-- Dodaj to na samej górze -->
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Filmweb</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Mini Filmweb</h1>
+        <nav>
+            <a href="{% url 'mini_filmweb:movie_list' %}">Lista filmów</a>
+            <a href="{% url 'mini_filmweb:movie_add' %}">Dodaj film</a>
+
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mini Filmweb. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
