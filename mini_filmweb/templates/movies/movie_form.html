@@ -1,0 +1,15 @@
+{% extends 'movies/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="movie-form">
+    <h1>{% if form.instance.pk %}Edytuj Film{% else %}Dodaj Nowy Film{% endif %}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Zapisz</button>
+        <a href="{% url 'mini_filmweb:movie_list' %}" class="button">Anuluj</a>
+    </form>
+</div>
+{% endblock %}
